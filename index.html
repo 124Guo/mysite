@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>我的作品集</title>
+<style>
+:root{--bg:#0b0c0e;--card:#15181d;--bd:#242932;--tx:#e8eaed;--mu:#8b93a1;--ac:#6ea8fe}
+html[data-theme="light"]{--bg:#f7f8fa;--card:#fff;--bd:#e4e7ec;--tx:#16181d;--mu:#5a6270;--ac:#2563eb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;transition:.3s}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--bd);z-index:9}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.b{font-weight:600}
+#t{background:var(--card);border:1px solid var(--bd);color:var(--tx);width:34px;height:34px;border-radius:9px;font-size:15px;cursor:pointer}
+.hero{padding:50px 0 30px}
+h1{font-size:clamp(1.6rem,6vw,2.3rem);letter-spacing:-.5px}
+.sub{color:var(--mu);margin-top:10px;font-size:.95rem}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));padding-bottom:40px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;cursor:pointer;transition:.25s}
+.card:hover{border-color:var(--ac);transform:translateY(-3px)}
+.card .ph{height:160px;display:grid;place-items:center;font-size:2rem;font-weight:700;color:#fff5;background:linear-gradient(135deg,#2b3a55,#6e8bb8)}
+.card .tx{padding:14px 16px 16px}
+.card h3{font-size:.95rem}
+.card p{color:var(--mu);font-size:.82rem;margin-top:3px}
+.card .d{color:var(--mu);font-size:.84rem;margin-top:8px;display:none}
+.card.open .d{display:block}
+footer{border-top:1px solid var(--bd);padding:24px 0 36px;text-align:center;color:var(--mu);font-size:.82rem}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><span class="b">你的名字</span><button id="t">☀</button></div></nav>
+<div class="wrap">
+  <div class="hero"><h1>你的名字</h1><p class="sub">设计师 / 开发者 · 下面是我的一部分作品,点卡片看详情</p></div>
+  <div class="grid">
+    <div class="card"><div class="ph">01</div><div class="tx"><h3>森屿咖啡 · 品牌重塑</h3><p>品牌设计 · 2025</p><div class="d">为一间社区咖啡馆做的品牌升级:标志系统、杯具包装与门店导视。核心是把「山林+岛屿」压缩成一个可延展的图形母题。</div></div></div>
+    <div class="card"><div class="ph" style="background:linear-gradient(135deg,#1e3a2f,#4f9b7c)">02</div><div class="tx"><h3>Metric Dashboard</h3><p>产品设计 + 前端 · 2025</p><div class="d">实时数据看板。把 40 多个指标收敛成三块核心区域;原生 JS + Canvas 画图,首屏 300ms 内加载完成。</div></div></div>
+    <div class="card"><div class="ph" style="background:linear-gradient(160deg,#161a2b,#8b5cf6)">03</div><div class="tx"><h3>城市夜行</h3><p>街头摄影 · 2024–2025</p><div class="d">持续两年的夜间街头影像,关注城市褪去功能后剩下的光、影子和偶然停留的人。35mm 定焦,自然光。</div></div></div>
+    <div class="card"><div class="ph" style="background:linear-gradient(135deg,#0f3b4d,#2f9fbf)">04</div><div class="tx"><h3>Weather Station</h3><p>开源项目 · 2024</p><div class="d">极简天气页面,显示未来 7 天温度曲线和降水概率。无框架单文件,通过公开 API 取数,1.2k star。</div></div></div>
+    <div class="card"><div class="ph" style="background:linear-gradient(135deg,#3d2b3a,#b06a8b)">05</div><div class="tx"><h3>拾光 · 相册 App</h3><p>移动端 UI · 2024</p><div class="d">主打「回顾」的相册应用概念设计:首页不做瀑布流,按时间线把照片编成「一天一页」,让翻看变成仪式。</div></div></div>
+    <div class="card"><div class="ph" style="background:linear-gradient(135deg,#2d3524,#7a8f4e)">06</div><div class="tx"><h3>山野 · 露营品牌页</h3><p>网页设计 · 2024</p><div class="d">露营装备品牌新版首页,用留白和大幅产品图替代密集促销模块,把「准备出发」的情绪放在第一屏。</div></div></div>
+  </div>
+</div>
+<footer>© <span id="y">2026</span> 你的名字</footer>
+<script>
+var r=document.documentElement,b=document.getElementById('t');
+function s(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀':'☾'}
+s();
+b.onclick=function(){var n=r.getAttribute('data-theme')==='dark'?'light':'dark';r.setAttribute('data-theme',n);s()};
+document.querySelectorAll('.card').forEach(function(c){c.onclick=function(){c.classList.toggle('open')}});
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
